@@ -52,7 +52,7 @@ class Timer {
       if (this.isRunning) {
         return this.overallTime + this._getTimeElapsedSinceLastStart();
       }
-  
+      
       return this.overallTime;
     }
   }
@@ -68,7 +68,9 @@ function init(){
 
     for(let but of buttons){
         but.addEventListener("click", reacted);
+        but.style.background = "red";
     }
+    timer.reset();
     button.textContent = 3;
     interval = setInterval(countdown, 1000);
 
@@ -111,10 +113,16 @@ function reacted(ev){
     if(chosen.id == butpot){
         timer.stop();
         button.textContent = timer.getTime() + "ms";  
-        timer.reset();
     }
     else{
         button.textContent = "Incorrect position";
     }
+
+    setTimeout(function(){
+      if(confirm("Play Again?")){
+        init();
+      }
+    }, 1000);
+    
 
 }
