@@ -61,6 +61,7 @@ class Timer {
 let interval;
 let timer = new Timer();
 let butpot;
+let again = false;
 function init(){
     let button = document.getElementById("5");
 
@@ -110,18 +111,28 @@ function reacted(ev){
         }
     }
     
-    if(chosen.id == butpot){
+    if(document.getElementById("8").style.background != "white"){
+      if(chosen.id == butpot){
         timer.stop();
         button.textContent = timer.getTime() + "ms";  
     }
-    else{
-        button.textContent = "Incorrect position";
+      else{
+          button.textContent = "Incorrect position";
+      }
     }
 
+
+    button = document.getElementById("8");
     setTimeout(function(){
-      if(confirm("Play Again?")){
+      button.style.background = "white";
+      button.textContent = "Play Again?";
+      if(ev.target.id == 8 && again){
         init();
+        button.textContent = "";
+        again = false;
       }
+      else
+        again = true;
     }, 1000);
     
 
