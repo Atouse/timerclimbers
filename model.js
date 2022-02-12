@@ -77,6 +77,10 @@ function init(){
 
 }
 
+function start(){
+  window.location.href = "index.html";
+}
+
 function countdown(){
     let button = document.getElementById("5");
 

@@ -28,3 +28,23 @@ body{
   border: none;
   background: red;
 }
+
+#start {
+  margin: 0;
+  border:none;
+  font-size:25px;
+  -ms-transform: translateX(500%);
+  transform: translateX(500%);
+}
+
+#something{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border:none;
+  font-size:25px;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  
+}
